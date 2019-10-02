@@ -21,8 +21,31 @@ let quotes = [
 ***/
 
 function getRandomQuote() {
-  return randomNumber = Math.floor(Math.random() * quotes.length);
+  // generate a random number between 0 and the last index in the array parameter
+  var longitudQuotes = quotes.length;
+  var randomNumber = Math.floor(Math.random() * longitudQuotes);
+  /*
+  var objeto = Object.values(quotes.randomNumber);
+  console.log(objeto);
+  */
+  /*
+  for (var key in quotes){
+  	//var objeto = Object.values(quotes.randomNumber[key]);
+    var objeto = Object.values(quotes.key[randomNumber]);
+    console.log(objeto);
+    //return objeto;
   }
+  */
+  //var objeto = object.values(quotes.randomNumber);
+  
+  
+  // use the random number and box notation to grab a random item from the quotes array
+
+  // return the random item
+  return randomNumber;
+  }
+console.log(getRandomQuote());
+console.log(Object.values(quotes));
 
  
 /***
