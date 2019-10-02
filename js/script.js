@@ -4,11 +4,11 @@ project 1 - A Random Quote Generator
 ******************************************/
 
 let quotes = [
-  { quote: "Everything about you reminds me of you. Except you.", source: "Groucho Marx", citation: "A Night at the Opera", year: 1935},
-  { quote: "In the end, it’s not the years in your life that count. It’s the life in your years.", source: "Abraham Lincoln"},
-  { quote: "The greatest glory in living lies not in never falling, but in rising every time we fall.", source: "Nelson Mandela"},
-  { quote: "The future belongs to those who believe in the beauty of their dreams.", source: "Eleanor Roosevelt"},
-  { quote: "Madness is doing the same thing over and over again hoping to get different results.", source: "Albert Einstein"}
+  { quote: "Everything about you reminds me of you. Except you", source: "Groucho Marx", citation: "A Night at the Opera", year: 1935},
+  { quote: "In the end, it’s not the years in your life that count. It’s the life in your years", source: "Abraham Lincoln"},
+  { quote: "The greatest glory in living lies not in never falling, but in rising every time we fall", source: "Nelson Mandela"},
+  { quote: "The future belongs to those who believe in the beauty of their dreams", source: "Eleanor Roosevelt"},
+  { quote: "Madness is doing the same thing over and over again hoping to get different results", source: "Albert Einstein"}
 ];
 
 
@@ -24,29 +24,12 @@ function getRandomQuote() {
   // generate a random number between 0 and the last index in the array parameter
   var longitudQuotes = quotes.length;
   var randomNumber = Math.floor(Math.random() * longitudQuotes);
-  /*
-  var objeto = Object.values(quotes.randomNumber);
-  console.log(objeto);
-  */
-  /*
-  for (var key in quotes){
-  	//var objeto = Object.values(quotes.randomNumber[key]);
-    var objeto = Object.values(quotes.key[randomNumber]);
-    console.log(objeto);
-    //return objeto;
+  for(i=0; i<longitudQuotes; i+=1){
+    console.log(randomNumber);
+    console.log(Object.values(quotes[randomNumber]));
+    return Object.values(quotes[randomNumber]);
   }
-  */
-  //var objeto = object.values(quotes.randomNumber);
-  
-  
-  // use the random number and box notation to grab a random item from the quotes array
-
-  // return the random item
-  return randomNumber;
-  }
-console.log(getRandomQuote());
-console.log(Object.values(quotes));
-
+}
  
 /***
   I create the `printQuote` function that 
@@ -65,16 +48,29 @@ console.log(Object.values(quotes));
 
 function printQuote() {
     var newNumber = getRandomQuote();
+    console.log('newNumber: ' + newNumber);
     var miString = ' ';
-    miString += '<p class="quote">' + quotes[newNumber].quote + '</p>';
-    miString += '<p class="source">' + quotes[newNumber].source + '. ';
+    //miString += '<p class="quote">' + newNumber["quote"] + '</p>';
+    //miString += '<p class="source">' + newNumber.source + '</p>';
+    
+    for (var key in newNumber){
+      console.log(newNumber[quote].quote);
+      miString += '<p class="quote">' + newNumber[quote].quote + '</p>';
+      miString += '<p class="source">' + source.key + '. ';
+    }
+    
+    //miString += '<p class="source">' + newNumber[key] + '. ';
+    
+    
+    console.log(miString);
 
-    if (quotes[newNumber].citation) {
-        miString += '<span class="citation">' + quotes[newNumber].citation + '. </span>';
+    //if (quotes[newNumber].citation) {
+    if (newNumber.citation) {
+        miString += '<span class="citation">' + newNumber.citation + '. </span>';
         }
         
-    if (quotes[newNumber].year) {
-        miString += '<span class="citation">' + quotes[newNumber].year + '.</span>';
+    if (newNumber.year) {
+        miString += '<span class="citation">' + newNumber.year + '.</span>';
         }
     
     miString += '</p>';
