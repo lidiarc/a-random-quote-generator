@@ -49,28 +49,34 @@ function getRandomQuote() {
 function printQuote() {
     var newNumber = getRandomQuote();
     console.log('newNumber: ' + newNumber);
+    console.log('newNumber: ' + newNumber[0]);
+    console.log('newNumber: ' + newNumber[1]);
     var miString = ' ';
     //miString += '<p class="quote">' + newNumber["quote"] + '</p>';
     //miString += '<p class="source">' + newNumber.source + '</p>';
-    
+    /*
     for (var key in newNumber){
-      console.log(newNumber[quote].quote);
-      miString += '<p class="quote">' + newNumber[quote].quote + '</p>';
-      miString += '<p class="source">' + source.key + '. ';
+      console.log(newNumber[key]);
+      //console.log(quotes[newNumber].quote);
+      miString += '<p class="quote">' + Object.values(newNumber[key]) + '</p>';
+      miString += '<p class="source">' + newNumber[key][0] + '. ';
     }
-    
+    */
     //miString += '<p class="source">' + newNumber[key] + '. ';
-    
+    //miString += '<p class="quote">' + Object.values(newNumber[quote]) + '</p>';
+    //miString += '<p class="quote">' + Object.values(newNumber[0]) + '</p>';
+    miString += '<p class="quote">' + newNumber[0] + '</p>';
+    miString += '<p class="source">' + newNumber[1];
     
     console.log(miString);
 
     //if (quotes[newNumber].citation) {
-    if (newNumber.citation) {
-        miString += '<span class="citation">' + newNumber.citation + '. </span>';
+    if (newNumber[2]) {
+        miString += '<span class="citation">' + newNumber[2] + '</span>';
         }
         
-    if (newNumber.year) {
-        miString += '<span class="citation">' + newNumber.year + '.</span>';
+    if (newNumber[3]) {
+        miString += '<span class="citation">' + newNumber[3] + '</span>';
         }
     
     miString += '</p>';
