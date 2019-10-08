@@ -25,9 +25,7 @@ function getRandomQuote() {
   var longitudQuotes = quotes.length;
   var randomNumber = Math.floor(Math.random() * longitudQuotes);
   for(i=0; i<longitudQuotes; i+=1){
-    console.log(randomNumber);
-    console.log(Object.values(quotes[randomNumber]));
-    return Object.values(quotes[randomNumber]);
+    return quotes[randomNumber];
   }
 }
  
@@ -50,15 +48,15 @@ function printQuote() {
     var newNumber = getRandomQuote();
     var miString = ' ';
     
-    miString += '<p class="quote">' + newNumber[0] + '</p>';
-    miString += '<p class="source">' + newNumber[1];
+    miString += '<p class="quote">' + newNumber.quote + '</p>';
+    miString += '<p class="source">' + newNumber.source;
     
-    if (newNumber[2]) {
-        miString += '<span class="citation">' + newNumber[2] + '</span>';
+    if (newNumber.citation) {
+        miString += '<span class="citation">' + newNumber.citation + '</span>';
         }
         
-    if (newNumber[3]) {
-        miString += '<span class="citation">' + newNumber[3] + '</span>';
+    if (newNumber.year) {
+        miString += '<span class="year">' + newNumber.year + '</span>';
         }
     
     miString += '</p>';
