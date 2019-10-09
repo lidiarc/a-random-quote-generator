@@ -24,9 +24,7 @@ function getRandomQuote() {
   // generate a random number between 0 and the last index in the array parameter
   var longitudQuotes = quotes.length;
   var randomNumber = Math.floor(Math.random() * longitudQuotes);
-  for(i=0; i<longitudQuotes; i+=1){
     return quotes[randomNumber];
-  }
 }
  
 /***
